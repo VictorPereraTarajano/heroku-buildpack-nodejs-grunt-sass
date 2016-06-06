@@ -150,10 +150,9 @@ fi
 status "Installing Sass"
 export GEM_HOME=$build_dir/.gem/ruby/2.2.4
 PATH="$GEM_HOME/bin:$PATH"
+gem install sass
 if test -d $cache_dir/ruby/.gem; then
   status "Restoring ruby gems directory from cache"
-#  sass -v
-  ruby -v
   cp -r $cache_dir/ruby/.gem $build_dir
   HOME=$build_dir gem update sass --user-install --no-rdoc --no-ri
 else
